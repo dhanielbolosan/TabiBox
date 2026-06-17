@@ -6,13 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "node scripts/copy-cesium-assets.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",
+    "cesium": "^1.142.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "next": "16.2.9",
+    "postinstall": "^0.11.2",
     "radix-ui": "^1.6.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
