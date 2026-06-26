@@ -29,17 +29,10 @@ export default function Globe() {
                 homeButton: false,
                 terrain: Cesium.Terrain.fromWorldTerrain()
             });
-            
+
             viewer.scene.globe.enableLighting = true;
             viewerRef.current = viewer;
-            viewer.camera.flyTo({
-                destination: Cartesian3.fromDegrees(-122.4175, 37.655, 400),
-                orientation: {
-                    heading: CesiumMath.toRadians(0.0),
-                    pitch: CesiumMath.toRadians(-15.0),
-                }
-            });
-
+            viewer.camera.flyHome(2.0);
             const buildingTileset = await createOsmBuildingsAsync();
             viewer.scene.primitives.add(buildingTileset);
         })();
